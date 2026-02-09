@@ -1,49 +1,63 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .card {
-  background: white;
   padding: 25px;
-  width: 90%;
   max-width: 400px;
+  margin: 80px auto;
+  background: white;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 input, textarea {
   width: 100%;
-  margin: 8px 0;
   padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-textarea {
-  height: 80px;
+  margin: 8px 0;
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 8px;
   font-size: 16px;
+  cursor: pointer;
 }
 
-button.yes {
+.slide {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.overlay p, .overlay h1 {
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.yes {
   background: #ff4d6d;
   color: white;
+  margin: 10px;
 }
 
-button.no {
+.no {
   background: #ccc;
 }
 
