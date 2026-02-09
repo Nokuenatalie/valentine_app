@@ -1,47 +1,32 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff4d6d, #ffb3c6, #b5e3ff);
+}
+
+body {
+  height: 100vh;
   overflow: hidden;
+  background: linear-gradient(
+    -45deg,
+    #ff4d6d,
+    #ff9acb,
+    #8fd3ff,
+    #ffcce6
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
 }
 
-/* Floating hearts */
-.heart {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: pink;
-  transform: rotate(-45deg);
-  animation: float 8s infinite;
-  opacity: 0.8;
+/* Moving gradient */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: inherit;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -7px;
-  left: 0;
-}
-
-.heart::after {
-  left: 7px;
-  top: 0;
-}
-
-@keyframes float {
-  0% { transform: translateY(100vh) rotate(-45deg); }
-  100% { transform: translateY(-10vh) rotate(-45deg); }
-}
-
-/* Main card */
+/* Card */
 .container {
   height: 100vh;
   display: flex;
@@ -50,22 +35,33 @@ body {
 }
 
 .card {
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   color: white;
-  padding: 35px;
-  border-radius: 18px;
-  max-width: 600px;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 650px;
   text-align: center;
-  box-shadow: 0 0 25px rgba(255,182,193,0.8);
+  box-shadow: 0 0 35px rgba(255, 105, 180, 0.9);
+  animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 button {
   margin: 12px;
-  padding: 12px 25px;
+  padding: 14px 28px;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .yes {
@@ -74,5 +70,60 @@ button {
 }
 
 .no {
-  background: #ddd;
+  background: #e0e0e0;
+}
+
+/* HEARTS */
+.heart {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+  animation: floatUp linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -9px;
+  left: 0;
+}
+
+.heart::after {
+  left: 9px;
+  top: 0;
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: sparkle 4s infinite;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+/* Floating animation */
+@keyframes floatUp {
+  from {
+    transform: translateY(110vh) rotate(-45deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20vh) rotate(-45deg);
+    opacity: 0;
+  }
 }
