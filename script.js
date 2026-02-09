@@ -1,4 +1,4 @@
-const name = "Shizane";
+const name = "Shezzaine";
 
 const messages = [
   `Hey ${name}, will you be my Valentine? 💖`,
