@@ -1,55 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Just a Moment</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SETUP FORM -->
-  <div class="card" id="formCard">
-    <h2>Setup</h2>
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="someone_you_loved.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <input type="text" id="girlName" placeholder="Her name">
-    <textarea id="message" placeholder="Write your special message..."></textarea>
-
-    <button onclick="start()">Continue</button>
-  </div>
-
-  <!-- SLIDE 1 -->
-  <div class="slide hidden" id="slide1">
+  <div class="slide" id="step">
     <div class="overlay">
-      <p id="loveMessage"></p>
-      <button onclick="nextSlide()">Next ➜</button>
+      <p id="messageText"></p>
+      <div id="buttons">
+        <button class="yes" onclick="nextStep('yes')">YES 💖</button>
+        <button class="no" onclick="nextStep('no')">NO 🙈</button>
+      </div>
     </div>
   </div>
 
-  <!-- SLIDE 2 -->
-  <div class="slide hidden" id="slide2">
-    <div class="overlay">
-      <h1 id="question"></h1>
-      <button class="yes" onclick="sayYes()">YES 💖</button>
-      <button class="no" onclick="sayNo()">NO 🙈</button>
-    </div>
-  </div>
-
-  <!-- YES -->
-  <div class="slide hidden" id="yesSlide">
-    <div class="overlay">
-      <h1>🎉 SHE SAID YES 🎉</h1>
-      <p>Happy Valentine’s Day 💕</p>
-    </div>
-  </div>
-
-  <!-- NO -->
-  <div class="slide hidden" id="noSlide">
-    <div class="overlay">
-      <p>It’s okay 🌸 You’re still special</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
