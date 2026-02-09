@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine 💖</title>
+  <title>Just for You 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="someone_you_loved.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="container">
+    <div class="card">
+      <p id="message"></p>
 
-  <div class="slide" id="step">
-    <div class="overlay">
-      <p id="messageText"></p>
       <div id="buttons">
-        <button class="yes" onclick="nextStep('yes')">YES 💖</button>
-        <button class="no" onclick="nextStep('no')">NO 🙈</button>
+        <button class="yes" onclick="answer('yes')">YES 💖</button>
+        <button class="no" onclick="answer('no')">NO 🙈</button>
       </div>
     </div>
   </div>
